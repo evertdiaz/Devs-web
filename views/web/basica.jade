@@ -1,0 +1,580 @@
+extends layout
+
+block content
+  body.c-layout-header-fixed
+    header.c-layout-header.c-layout-header-3.c-layout-header-3-custom-menu.c-layout-header-default-mobile
+      .c-navbar
+        .container
+          // BEGIN: BRAND
+          .c-navbar-wrapper.clearfix
+            .c-brand.c-pull-left
+              a.c-logo(href='/')
+                img.c-desktop-logo(src='../../assets/base/img/logos/logo-1.png', alt='Logotipo Devs Imagen Digital')
+                img.c-desktop-logo-inverse(src='../../assets/base/img/logos/logo-1.png', alt='Logotipo Devs Imagen Digital')
+                img.c-mobile-logo(src='../../assets/base/img/logos/logo-1.png', alt='Logotipo Devs Imagen Digital')
+              button.c-hor-nav-toggler(type='button', data-target='.c-mega-menu')
+                span.c-line
+                span.c-line
+                span.c-line
+              //
+                PROXIMO LANZMAIENTO BUSQUEDA
+                <button class="c-search-toggler" type="button">
+                <i class="fa fa-search"></i>
+                </button>
+            // END: BRAND
+            // BEGIN: QUICK SEARCH
+            form.c-quick-search(action='#')
+              input.form-control(type='text', name='query', placeholder='Type to search...', value='', autocomplete='off')
+              span.c-theme-link ×
+            // END: QUICK SEARCH
+            // BEGIN: HOR NAV
+            // BEGIN: LAYOUT/HEADERS/MEGA-MENU
+            // BEGIN: MEGA MENU
+            nav.c-mega-menu.c-pull-right.c-mega-menu-dark.c-mega-menu-dark-mobile.c-fonts-uppercase.c-fonts-bold
+              // BEGIN: MEGA MENU
+              ul.nav.navbar-nav.c-theme-nav
+                li.c-menu-type-classic
+                  a.c-link(href='/') Inicio
+                li.c-active.c-menu-type-classic
+                  a.c-link.dropdown-toggle Servicios
+                  ul.dropdown-menu.c-menu-type-classic.c-pull-left
+                    li
+                      a(href='/web') Desarrollo Web
+                    li
+                      a(href='/hosting') Hosting
+                    //
+                      PROXIMO LANZAMIENTO
+                      <li class="dropdown-submenu">
+                      <a href="servicios/posicionamiento/index.html">Posicionamiento</a>
+                      </li>
+                      <li class="dropdown-submenu">
+                      <a href="servicios/redes-sociales/index.html">Redes Sociales</a>
+                      </li>
+                      <li class="dropdown-submenu">
+                      <a href="servicios/consultoria/index.html">Consultoría</a>
+                      </li>
+                //
+                  PROXIMO LANZAMIENTO
+                  <li class="c-menu-type-classic">
+                  <a href="#" class="c-link">Blog</a>
+                  </li>
+                  <li class="c-menu-type-classic">
+                  <a href="#" class="c-link">Arma tu producto</a>
+                  </li>
+                li.c-menu-type-classic
+                  a.c-link(href='/contacto') Contacto
+                //
+                  OTROS ELEMENTOS
+                  <li class="c-search-toggler-wrapper">
+                  <a href="#" class="c-btn-icon c-search-toggler"><i class="fa fa-search"></i></a>
+                  </li>
+                  <li>
+                  <a href="javascript:;" data-toggle="modal" data-target="#login-form" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold"><i class="icon-user"></i> Sign In</a>
+                  </li>
+                  <li class="c-quick-sidebar-toggler-wrapper">
+                  <a href="#" class="c-quick-sidebar-toggler">
+                  <span class="c-line"></span>
+                  <span class="c-line"></span>
+                  <span class="c-line"></span>
+                  </a>
+                  </li>
+              // END MEGA MENU
+            // END: MEGA MENU
+            // END: LAYOUT/HEADERS/MEGA-MENU
+            // END: HOR NAV
+    // END: HEADER
+    // END: LAYOUT/HEADERS/HEADER-1
+    // BEGIN: CONTENT/USER/FORGET-PASSWORD-FORM
+    #forget-password-form.modal.fade.c-content-login-form(role='dialog')
+      .modal-dialog
+        .modal-content.c-square
+          .modal-header.c-no-border
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            h3.c-font-24.c-font-sbold Password Recovery
+            p
+              | To recover your password please fill in your email address
+            form
+              .form-group
+                label.hide(for='forget-email') Email
+                input#forget-email.form-control.input-lg.c-square(type='email', placeholder='Email')
+              .form-group
+                button.btn.c-theme-btn.btn-md.c-btn-uppercase.c-btn-bold.c-btn-square.c-btn-login(type='submit') Submit
+                a.c-btn-forgot(href='javascript:;', data-toggle='modal', data-target='#login-form', data-dismiss='modal') Back To Login
+          .modal-footer.c-no-border
+            span.c-text-account Don't Have An Account Yet ?
+            a.btn.c-btn-dark-1.btn.c-btn-uppercase.c-btn-bold.c-btn-slim.c-btn-border-2x.c-btn-square.c-btn-signup(href='javascript:;', data-toggle='modal', data-target='#signup-form', data-dismiss='modal') Signup!
+    // END: CONTENT/USER/FORGET-PASSWORD-FORM
+    // BEGIN: CONTENT/USER/SIGNUP-FORM
+    #signup-form.modal.fade.c-content-login-form(role='dialog')
+      .modal-dialog
+        .modal-content.c-square
+          .modal-header.c-no-border
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            h3.c-font-24.c-font-sbold Create An Account
+            p
+              | Please fill in below form to create an account with us
+            form
+              .form-group
+                label.hide(for='signup-email') Email
+                input#signup-email.form-control.input-lg.c-square(type='email', placeholder='Email')
+              .form-group
+                label.hide(for='signup-username') Username
+                input#signup-username.form-control.input-lg.c-square(type='email', placeholder='Username')
+              .form-group
+                label.hide(for='signup-fullname') Fullname
+                input#signup-fullname.form-control.input-lg.c-square(type='email', placeholder='Fullname')
+              .form-group
+                label.hide(for='signup-country') Country
+                select#signup-country.form-control.input-lg.c-square
+                  option(value='1') Country
+              .form-group
+                button.btn.c-theme-btn.btn-md.c-btn-uppercase.c-btn-bold.c-btn-square.c-btn-login(type='submit') Signup
+                a.c-btn-forgot(href='javascript:;', data-toggle='modal', data-target='#login-form', data-dismiss='modal') Back To Login
+    // END: CONTENT/USER/SIGNUP-FORM
+    // BEGIN: CONTENT/USER/LOGIN-FORM
+    #login-form.modal.fade.c-content-login-form(role='dialog')
+      .modal-dialog
+        .modal-content.c-square
+          .modal-header.c-no-border
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            h3.c-font-24.c-font-sbold Good Afternoon!
+            p
+              | Let's make today a great day!
+            form
+              .form-group
+                label.hide(for='login-email') Email
+                input#login-email.form-control.input-lg.c-square(type='email', placeholder='Email')
+              .form-group
+                label.hide(for='login-password') Password
+                input#login-password.form-control.input-lg.c-square(type='password', placeholder='Password')
+              .form-group
+                .c-checkbox
+                  input#login-rememberme.c-check(type='checkbox')
+                  label.c-font-thin.c-font-17(for='login-rememberme')
+                    span
+                    span.check
+                    span.box
+                    |               Remember Me
+              .form-group
+                button.btn.c-theme-btn.btn-md.c-btn-uppercase.c-btn-bold.c-btn-square.c-btn-login(type='submit') Login
+                a.c-btn-forgot(href='javascript:;', data-toggle='modal', data-target='#forget-password-form', data-dismiss='modal') Forgot Your Password ?
+              .clearfix
+                .c-content-divider.c-divider-sm.c-icon-bg.c-bg-grey.c-margin-b-20
+                  span(style='width: 110px') or signup with
+                ul.c-content-list-adjusted
+                  li
+                    a.btn.btn-block.c-btn-square.btn-social.btn-twitter
+                      i.fa.fa-twitter
+                      |                 Twitter
+                  li
+                    a.btn.btn-block.c-btn-square.btn-social.btn-facebook
+                      i.fa.fa-facebook
+                      |                 Facebook
+                  li
+                    a.btn.btn-block.c-btn-square.btn-social.btn-google
+                      i.fa.fa-google
+                      |                 Google
+          .modal-footer.c-no-border
+            span.c-text-account Don't Have An Account Yet ?
+            a.btn.c-btn-dark-1.btn.c-btn-uppercase.c-btn-bold.c-btn-slim.c-btn-border-2x.c-btn-square.c-btn-signup(href='javascript:;', data-toggle='modal', data-target='#signup-form', data-dismiss='modal') Signup!
+    // END: CONTENT/USER/LOGIN-FORM
+    // BEGIN: LAYOUT/SIDEBARS/QUICK-SIDEBAR
+    nav.c-layout-quick-sidebar
+      .c-header
+        button.c-link.c-close(type='button')
+          i.icon-login
+      .c-content
+        .c-section
+          h3 Theme Colors
+          .c-settings
+            span.c-color.c-default.c-active(data-color='default')
+            span.c-color.c-green1(data-color='green1')
+            span.c-color.c-green2(data-color='green2')
+            span.c-color.c-green3(data-color='green3')
+            span.c-color.c-yellow1(data-color='yellow1')
+            span.c-color.c-yellow2(data-color='yellow2')
+            span.c-color.c-yellow3(data-color='yellow3')
+            span.c-color.c-red1(data-color='red1')
+            span.c-color.c-red2(data-color='red2')
+            span.c-color.c-red3(data-color='red3')
+            span.c-color.c-purple1(data-color='purple1')
+            span.c-color.c-purple2(data-color='purple2')
+            span.c-color.c-purple3(data-color='purple3')
+            span.c-color.c-blue1(data-color='blue1')
+            span.c-color.c-blue2(data-color='blue2')
+            span.c-color.c-blue3(data-color='blue3')
+            span.c-color.c-brown1(data-color='brown1')
+            span.c-color.c-brown2(data-color='brown2')
+            span.c-color.c-brown3(data-color='brown3')
+            span.c-color.c-dark1(data-color='dark1')
+            span.c-color.c-dark2(data-color='dark2')
+            span.c-color.c-dark3(data-color='dark3')
+        .c-section
+          h3 Header Type
+          .c-settings
+            input.c-setting_header-type.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='boxed', value='boxed')
+            input.c-setting_header-type.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='fluid', value='fluid')
+        .c-section
+          h3 Header Mode
+          .c-settings
+            input.c-setting_header-mode.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='fixed', value='fixed')
+            input.c-setting_header-mode.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='static', value='static')
+        .c-section
+          h3 Mega Menu Style
+          .c-settings
+            input.c-setting_megamenu-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='dark', value='dark')
+            input.c-setting_megamenu-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='light', value='light')
+        .c-section
+          h3 Font Style
+          .c-settings
+            input.c-setting_font-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='default', value='default')
+            input.c-setting_font-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='light', value='light')
+    // END: LAYOUT/SIDEBARS/QUICK-SIDEBAR
+    // BEGIN: PAGE CONTAINER
+    .c-layout-page
+      // BEGIN: PAGE CONTENT
+      // BEGIN: CONTENT/PRODUCTS/PRODUCT-1
+      .c-content-box.c-size-md.c-bg-white.c-no-bottom-padding
+        .container
+          .c-content-product-1.c-opt-1
+            .c-content-title-1
+              h3.c-center.c-font-uppercase.c-font-bold Página Web Básica
+              .c-line-center
+            .row
+              .col-md-8
+                .c-body
+                  ul.c-row
+                    li
+                      h4 Ideal para iniciar 
+                      p
+                        | Una página web básica cuenta con todo lo necesario para que comiences con tu imagen digital.
+                    li
+                      h4 Muestra toda tu información 
+                      p
+                        | Tómate la libertad de poner toda la información que creas que necesiten tus clientes, tu horario, una promoción, ¡lo que desees!
+                  ul.c-row
+                    li
+                      h4 Ten tu negocio abierto 24/7 
+                      p
+                        | En tu página web puedes recibir visitas las 24 horas, los 7 días. ¡Todos verán tu negocio y te visitarán!
+                    li
+                      h4 Muchas mas personas te encontrarán. 
+                      p
+                        | No te limites a solo aquellos que ya conocen tu negocio o aquellos que pasan cerca. ¡Con una web todos podrán saber de ti!
+                  button.btn.btn-md.c-btn-border-2x.c-btn-square.c-btn-regular.c-btn-uppercase.c-btn-bold.c-margin-b-100(onclick="window.location.href='#caracteristicas'", type='button')
+                    | Ver Más
+              .col-md-4
+                .c-media
+                  img(src='../../assets/base/img/servicios/web/basica-intro.png', alt='Imagen de Introducción de Páginas web Básicas - Devs Imagen Digital')
+      // END: CONTENT/PRODUCTS/PRODUCT-1
+      // BEGIN: CONTENT/TABS/TAB-3
+      #caracteristicas.c-content-box.c-size-md
+        .container
+          .col-md-6.col-sm-12
+            .c-content-tab-4.c-opt-3(role='tabpanel')
+              ul.nav.nav-justified(role='tablist')
+                li.active(role='presentation')
+                  a.c-font-15(href='#tab-31', role='tab', data-toggle='tab') Características
+                li(role='presentation')
+                  a.c-font-15(href='#tab-32', role='tab', data-toggle='tab') Requisitos
+                li(role='presentation')
+                  a.c-font-15(href='#tab-33', role='tab', data-toggle='tab') Proceso de Producción
+              .tab-content
+                #tab-31.tab-pane.fade.in.active(role='tabpanel')
+                  ul.c-tab-items
+                    li.row
+                      .col-sm-4.col-xs-5
+                        .c-photo
+                          img.img-responsive(width='150', height='100', src='../../assets/base/img/servicios/web/basica-caracteristicas-1.png', alt='Imagen para características de Página web Básica - Devs Imagen Digital')
+                      .col-sm-8.col-xs-7
+                        h4.c-font-15.espaciado
+                          i.fa.fa-newspaper-o
+                          |  Diseño Estático.  
+                          br
+                          i.fa.fa-columns
+                          |  Cuentas con 5 pestañas.  
+                          br
+                          i.fa.fa-list-alt
+                          |  Con 5 Secciones.  
+                          br
+                          i.fa.fa-photo
+                          |  Muestra hasta 5 Productos.  
+                          br
+                          i.fa.fa-desktop
+                          |  Adaptable a todas las pantallas.  
+                          br
+                          i.fa.fa-search-plus
+                          |  Tienes 2 revisiones.  
+                          br
+                          i.fa.fa-calendar
+                          |  Duración de 7 días.  
+                          br
+                #tab-32.tab-pane.fade(role='tabpanel')
+                  ul.c-tab-items
+                    li.row
+                      .col-sm-4.col-xs-5
+                        .c-photo
+                          img.img-responsive(width='150', height='100', src='../../assets/base/img/servicios/web/basica-requisitos-1.png', alt='Imagen para los requisitos de Página web Básica - Devs Imagen Digital')
+                      .col-sm-8.col-xs-7
+                        h4.c-font-15.espaciado
+                          i.fa.fa-thumbs-o-up
+                          |  Reunión de Asesoría  
+                          br
+                          i.fa.fa-flag
+                          |  Llenado de Objetivos  
+                          br
+                          i.fa.fa-credit-card
+                          |  Adelanto del 25%  
+                          br
+                          i.fa.fa-bullseye
+                          |  Logo vectorizado  
+                          br
+                          i.fa.fa-edit
+                          |  Ejemplos de imagen deseada  
+                          br
+                #tab-33.tab-pane.fade(role='tabpanel')
+                  ul.c-tab-items
+                    li.row
+                      .col-sm-4.col-xs-5
+                        .c-photo
+                          img.img-responsive(width='150', height='100', src='../../assets/base/img/servicios/web/basica-proceso-1.png', alt='Imagen para el proceso de desarrollo de web Básica - Devs Imagen Digital')
+                      .col-sm-8.col-xs-7
+                        h4.c-font-15.espaciado
+                          i.fa.fa-terminal
+                          |  Llenado de Requerimientos  
+                          br
+                          i.fa.fa-tachometer
+                          |  Llenado de Brief inicial  
+                          br
+                          i.fa.fa-money
+                          |  Separación con el 25%  
+                          br
+                          i.fa.fa-paint-brush
+                          |  Elección de diseño propuesto  
+                          br
+                          i.fa.fa-laptop
+                          |  Envío de contenidos e imagen  
+                          br
+                          i.fa.fa-search-plus
+                          |  Revisiones  
+                          br
+                          i.fa.fa-bank
+                          |  Depósito final  
+                          br
+                          i.fa.fa-soundcloud
+                          |  Subida a internet  
+                          br
+                          i.fa.fa-star
+                          |  Seguimiento constante  
+                          br
+          .col-md-6.col-sm-12
+            .c-content-tab-4.c-opt-4(role='tabpanel')
+              ul.nav.nav-justified(role='tablist')
+                li.active(role='presentation')
+                  a.c-font-15(href='#tab-41', role='tab', data-toggle='tab') Productos relacionados
+                li(role='presentation')
+                  a.c-font-15(href='#tab-42', role='tab', data-toggle='tab') Comparar productos
+              .tab-content
+                #tab-41.tab-pane.fade.in.active(role='tabpanel')
+                  ul.c-tab-items
+                    li.row(style='width:100%')
+                      .col-sm-12.col-xs-12
+                        .c-photo
+                          h4.c-font-20.centrado Revisa otros productos
+                          p.c-font-15
+                      .col-sm-6.col-xs-12.c-center.margen-fondo
+                        .c-photo
+                          a.btn.c-theme-btn.c-btn-uppercase.c-btn-square.c-btn-bold(href='/web/profesional') Web Profesional
+                      .col-sm-6.col-xs-12.c-center.margen-fondo
+                        .c-photo
+                          a.btn.c-theme-btn.c-btn-uppercase.c-btn-square.c-btn-bold(href='/web/corporativa') Web Corporativa
+                      .col-sm-12.col-xs-12.c-center.margen-fondo
+                        .c-photo
+                          a.btn.c-theme-btn.c-btn-uppercase.c-btn-square.c-btn-bold(href='/hosting') Hosting/Correos
+                #tab-42.tab-pane.fade(role='tabpanel')
+                  ul.c-tab-items
+                    li.row
+                      .col-sm-12.col-xs-12
+                        .c-photo
+                          h4.c-font-20.centrado Dale un vistazo a todos nuestros productos 
+                    li.row
+                      .col-sm-12.col-xs-12.c-center
+                        .c-photo
+                          a.btn.c-theme-btn.c-btn-uppercase.c-btn-square.c-btn-bold(href='/web#comparativa') Comparar
+      // END: CONTENT/TABS/TAB-3
+      // BEGIN: CONTENT/BARS/BAR-3
+      .c-content-box.c-size-md.c-bg-dark
+        .container
+          .c-content-bar-3
+            .row
+              .col-md-7
+                .c-content-title-1
+                  h3.c-font-uppercase.c-font-bold  Es hora de estar en internet 
+                  p.c-font-uppercase
+                    | Diferénciate de tu competencia y deja que tus clientes te encuentren.
+              .col-md-3.col-md-offset-2
+                .c-content-v-center(style='height: 90px;')
+                  .c-wrapper
+                    .c-body
+                      a(href='/contacto')
+                        button.btn.btn-md.c-btn-square.c-btn-border-2x.c-theme-btn.c-btn-uppercase.c-btn-bold(type='button') ¡Quiero mi web!
+      // END: CONTENT/BARS/BAR-3
+      // BEGIN: CONTENT/MISC/LATEST-ITEMS-4
+      .c-content-box.c-size-md.c-bg-grey-1
+        .container
+          .c-content-title-1
+            h3.c-font-uppercase.c-center.c-font-bold Algunos Ejemplos
+            .c-line-center
+          .row
+            .col-md-8
+              .c-content-media-2-slider(data-slider='owl', data-single-item='true', data-auto-play='4000')
+                .owl-carousel.owl-theme.c-theme.owl-single
+                  .item
+                    .center.center-block.c-content-label.c-font-uppercase.c-font-bold
+                      a(target='_blank', href='/web/eb1') Ver Ejemplo web 1 completo.
+                    .c-content-media-2.c-bg-img-center(style='background-image: url(../../assets/base/img/servicios/web/basica-ejemplo-1.png); min-height: 380px;')
+                      .c-panel
+                        .c-fav
+                  .item
+                    .center.center-block.c-content-label.c-font-uppercase.c-font-bold
+                      a(target='_blank', href='/web/eb2') Ver Ejemplo web 2 completo.
+                    .c-content-media-2.c-bg-img-center(style='background-image: url(../../assets/base/img/servicios/web/basica-ejemplo-2.png); min-height: 380px;')
+                      .c-panel
+                        .c-fav
+                  .item
+                    .center.center-block.c-content-label.c-font-uppercase.c-font-bold
+                      a(target='_blank', href='/web/eb3') Ver Ejemplo web 3 completo.
+                    .c-content-media-2.c-bg-img-center(style='background-image: url(../../assets/base/img/servicios/web/basica-ejemplo-3.png); min-height: 380px;')
+                      .c-panel
+                        .c-fav
+                  .item
+                    .center.center-block.c-content-label.c-font-uppercase.c-font-bold
+                      a(target='_blank', href='/web/eb4') Ver Ejemplo web 4 completo.
+                    .c-content-media-2.c-bg-img-center(style='background-image: url(../../assets/base/img/servicios/web/basica-ejemplo-4.png); min-height: 380px;')
+                      .c-panel
+                        .c-fav
+            .col-md-4
+              .c-content-media-1(style='height: 380px;')
+                .c-content-label.c-font-uppercase.c-font-bold.c-theme-bg
+                  | Opinión de la web
+                a.c-title.c-font-uppercase.c-font-bold.c-theme-on-hover Buenos Resultados
+                p.cursiva
+                  | "Una idea básica te puede llevar a grandes resultados, una web básica, también."
+                .c-author
+                  .c-portrait(style='background-image: url(../../assets/base/img/servicios/web/basica-mensaje.png)')
+                  .c-name.c-font-uppercase
+                    | - Jorge Chávez, Creative Designer
+      // END: CONTENT/MISC/LATEST-ITEMS-4
+      // END: PAGE CONTENT
+    // END: PAGE CONTAINER
+    // BEGIN: LAYOUT/FOOTERS/FOOTER-5
+    a(name='footer')
+    footer.c-layout-footer.c-layout-footer-2
+      .container
+        .row
+          .col-md-6
+            .c-container.c-first
+              .c-content-title-1
+                h3.c-font-uppercase.c-font-bold Tu imagen digital es la prioridad 
+                .c-line-left
+                p.color-apple
+                  | En devs contamos con asesores dispuestos a visitarte, absolver todas tus dudas y brindarte asesoría especializada. 
+                  br
+                  strong
+                    i.fa.fa-whatsapp
+                    |   986 646 836 
+                    br
+                a.btn.c-theme-btn.c-btn-uppercase.c-btn-square.c-btn-bold(href='/contacto') Contáctanos
+                p
+          .col-md-6
+            .c-container.c-last
+              .c-content-title-1
+                h3.c-font-uppercase.c-font-bold ¡Síguenos! 
+                .c-line-left
+              ul.c-socials
+                li
+                  a(target='_blank', href='https://twitter.com/devsimagen')
+                    i.icon-social-twitter
+                li
+                  a(target='_blank', href='https://www.facebook.com/devsimagendigital/')
+                    i.icon-social-facebook
+                
+                li
+                  a(target='_blank', href='https://www.linkedin.com/company/devs-imagen-digital-sac')
+                    i.fa.fa-linkedin
+              br
+              br
+              br
+              p.color-apple
+                | Revisa nuestro Blog si quieres conocer las mejores noticias en marketing digital.
+              a.btn.c-btn-border-1x.c-btn-grey-1.c-btn-square.c-btn-uppercase.c-btn-bold.c-margin-r-40(target='_blank', href='/blog') Blog
+              | -
+        .c-copyright
+          p.c-font-oswald.c-font-14
+            | Copyright © Devs Imagen Digital SAC
+    // END: LAYOUT/FOOTERS/FOOTER-5
+    // BEGIN: LAYOUT/FOOTERS/GO2TOP
+    .c-layout-go2top
+      i.icon-arrow-up
+    // END: LAYOUT/FOOTERS/GO2TOP
+    // BEGIN: LAYOUT/BASE/BOTTOM
+    // BEGIN: CORE PLUGINS
+    //if lt IE 9
+      script(src='../../../../assets/global/plugins/excanvas.min.js')
+    script(src='../../assets/plugins/jquery.min.js', type='text/javascript')
+    script(src='../../assets/plugins/jquery-migrate.min.js', type='text/javascript')
+    script(src='../../assets/plugins/bootstrap/js/bootstrap.min.js', type='text/javascript')
+    // END: CORE PLUGINS
+    // BEGIN: LAYOUT PLUGINS
+    script(src='../../assets/plugins/revo-slider/js/jquery.themepunch.tools.min.js', type='text/javascript')
+    script(src='../../assets/plugins/revo-slider/js/jquery.themepunch.revolution.min.js', type='text/javascript')
+    script(src='../../assets/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js', type='text/javascript')
+    script(src='../../assets/plugins/owl-carousel/owl.carousel.min.js', type='text/javascript')
+    script(src='../../assets/plugins/counterup/jquery.waypoints.min.js', type='text/javascript')
+    script(src='../../assets/plugins/counterup/jquery.counterup.min.js', type='text/javascript')
+    script(src='../../assets/plugins/fancybox/jquery.fancybox.pack.js', type='text/javascript')
+    // END: LAYOUT PLUGINS
+    // BEGIN: THEME SCRIPTS
+    script(src='../../assets/base/js/components.js', type='text/javascript')
+    script(src='../../assets/base/js/app.js', type='text/javascript')
+    script.
+      $(document).ready(function() {
+      App.init(); // init core
+      // init main slider
+      var slider = $('.c-layout-revo-slider .tp-banner');
+      var cont = $('.c-layout-revo-slider .tp-banner-container');
+      var api = slider.show().revolution({
+      delay: 15000,
+      startwidth:1170,
+      startheight: 620,
+      navigationType: "hide",
+      navigationArrows: "solo",
+      touchenabled: "on",
+      onHoverStop: "on",
+      keyboardNavigation: "off",
+      navigationStyle: "circle",
+      navigationHAlign: "center",
+      navigationVAlign: "bottom",
+      spinner: "spinner2",
+      fullScreen: "on",
+      fullScreenAlignForce:"on",
+      fullScreenOffsetContainer: (App.getViewPort().width < App.getBreakpoint('md') ? '.c-layout-header' : ''),
+      shadow: 0,
+      fullWidth: "off",
+      forceFullWidth: "off",
+      hideTimerBar:"on",
+      hideThumbsOnMobile: "on",
+      hideNavDelayOnMobile: 1500,
+      hideBulletsOnMobile: "on",
+      hideArrowsOnMobile: "on",
+      hideThumbsUnderResolution: 0
+      });
+      });
+    // END: THEME SCRIPTS
+    // END: LAYOUT/BASE/BOTTOM

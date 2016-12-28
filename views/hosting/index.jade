@@ -1,0 +1,671 @@
+extends layout
+
+block content
+  body.c-layout-header-fixed
+    // BEGIN: LAYOUT/HEADERS/HEADER-1
+    // BEGIN: HEADER
+    header.c-layout-header.c-layout-header-3.c-layout-header-3-custom-menu.c-layout-header-default-mobile
+      .c-navbar
+        .container
+          // BEGIN: BRAND
+          .c-navbar-wrapper.clearfix
+            .c-brand.c-pull-left
+              a.c-logo(href='/')
+                img.c-desktop-logo(src='../../assets/base/img/logos/logo-1.png', alt='Logotipo de Devs Imagen Digital')
+                img.c-desktop-logo-inverse(src='../../assets/base/img/logos/logo-1.png', alt='Logotipo de Devs Imagen Digital')
+                img.c-mobile-logo(src='../../assets/base/img/logos/logo-1.png', alt='Logotipo de Devs Imagen Digital')
+              button.c-hor-nav-toggler(type='button', data-target='.c-mega-menu')
+                span.c-line
+                span.c-line
+                span.c-line
+              //
+                PROXIMO LANZMAIENTO BUSQUEDA
+                <button class="c-search-toggler" type="button">
+                <i class="fa fa-search"></i>
+                </button>
+            // END: BRAND
+            // BEGIN: QUICK SEARCH
+            form.c-quick-search(action='#')
+              input.form-control(type='text', name='query', placeholder='Type to search...', value='', autocomplete='off')
+              span.c-theme-link ×
+            // END: QUICK SEARCH
+            // BEGIN: HOR NAV
+            // BEGIN: LAYOUT/HEADERS/MEGA-MENU
+            // BEGIN: MEGA MENU
+            nav.c-mega-menu.c-pull-right.c-mega-menu-dark.c-mega-menu-dark-mobile.c-fonts-uppercase.c-fonts-bold
+              // BEGIN: MEGA MENU
+              ul.nav.navbar-nav.c-theme-nav
+                li.c-menu-type-classic
+                  a.c-link(href='/') Inicio
+                li.c-active.c-menu-type-classic
+                  a.c-link.dropdown-toggle Servicios
+                  ul.dropdown-menu.c-menu-type-classic.c-pull-left
+                    li
+                      a(href='/web') Desarrollo Web
+                    li
+                      a(href='/hosting') Hosting
+                    //
+                      PROXIMO LANZAMIENTO
+                      <li class="dropdown-submenu">
+                      <a href="servicios/posicionamiento/index.html">Posicionamiento</a>
+                      </li>
+                      <li class="dropdown-submenu">
+                      <a href="servicios/redes-sociales/index.html">Redes Sociales</a>
+                      </li>
+                      <li class="dropdown-submenu">
+                      <a href="servicios/consultoria/index.html">Consultoría</a>
+                      </li>
+                //
+                  PROXIMO LANZAMIENTO
+                  <li class="c-menu-type-classic">
+                  <a href="#" class="c-link">Blog</a>
+                  </li>
+                  <li class="c-menu-type-classic">
+                  <a href="#" class="c-link">Arma tu producto</a>
+                  </li>
+                li.c-menu-type-classic
+                  a.c-link(href='/contacto') Contacto
+                //
+                  OTROS ELEMENTOS
+                  <li class="c-search-toggler-wrapper">
+                  <a href="#" class="c-btn-icon c-search-toggler"><i class="fa fa-search"></i></a>
+                  </li>
+                  <li>
+                  <a href="javascript:;" data-toggle="modal" data-target="#login-form" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold"><i class="icon-user"></i> Sign In</a>
+                  </li>
+                  <li class="c-quick-sidebar-toggler-wrapper">
+                  <a href="#" class="c-quick-sidebar-toggler">
+                  <span class="c-line"></span>
+                  <span class="c-line"></span>
+                  <span class="c-line"></span>
+                  </a>
+                  </li>
+              // END MEGA MENU
+            // END: MEGA MENU
+            // END: LAYOUT/HEADERS/MEGA-MENU
+            // END: HOR NAV
+    // END: HEADER
+    // END: LAYOUT/HEADERS/HEADER-1
+    // BEGIN: CONTENT/USER/FORGET-PASSWORD-FORM
+    #forget-password-form.modal.fade.c-content-login-form(role='dialog')
+      .modal-dialog
+        .modal-content.c-square
+          .modal-header.c-no-border
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            h3.c-font-24.c-font-sbold Password Recovery
+            p
+              | To recover your password please fill in your email address
+            form
+              .form-group
+                label.hide(for='forget-email') Email
+                input#forget-email.form-control.input-lg.c-square(type='email', placeholder='Email')
+              .form-group
+                button.btn.c-theme-btn.btn-md.c-btn-uppercase.c-btn-bold.c-btn-square.c-btn-login(type='submit') Submit
+                a.c-btn-forgot(href='javascript:;', data-toggle='modal', data-target='#login-form', data-dismiss='modal') Back To Login
+          .modal-footer.c-no-border
+            span.c-text-account Don't Have An Account Yet ?
+            a.btn.c-btn-dark-1.btn.c-btn-uppercase.c-btn-bold.c-btn-slim.c-btn-border-2x.c-btn-square.c-btn-signup(href='javascript:;', data-toggle='modal', data-target='#signup-form', data-dismiss='modal') Signup!
+    // END: CONTENT/USER/FORGET-PASSWORD-FORM
+    // BEGIN: CONTENT/USER/SIGNUP-FORM
+    #signup-form.modal.fade.c-content-login-form(role='dialog')
+      .modal-dialog
+        .modal-content.c-square
+          .modal-header.c-no-border
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            h3.c-font-24.c-font-sbold Create An Account
+            p
+              | Please fill in below form to create an account with us
+            form
+              .form-group
+                label.hide(for='signup-email') Email
+                input#signup-email.form-control.input-lg.c-square(type='email', placeholder='Email')
+              .form-group
+                label.hide(for='signup-username') Username
+                input#signup-username.form-control.input-lg.c-square(type='email', placeholder='Username')
+              .form-group
+                label.hide(for='signup-fullname') Fullname
+                input#signup-fullname.form-control.input-lg.c-square(type='email', placeholder='Fullname')
+              .form-group
+                label.hide(for='signup-country') Country
+                select#signup-country.form-control.input-lg.c-square
+                  option(value='1') Country
+              .form-group
+                button.btn.c-theme-btn.btn-md.c-btn-uppercase.c-btn-bold.c-btn-square.c-btn-login(type='submit') Signup
+                a.c-btn-forgot(href='javascript:;', data-toggle='modal', data-target='#login-form', data-dismiss='modal') Back To Login
+    // END: CONTENT/USER/SIGNUP-FORM
+    // BEGIN: CONTENT/USER/LOGIN-FORM
+    #login-form.modal.fade.c-content-login-form(role='dialog')
+      .modal-dialog
+        .modal-content.c-square
+          .modal-header.c-no-border
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            h3.c-font-24.c-font-sbold Good Afternoon!
+            p
+              | Let's make today a great day!
+            form
+              .form-group
+                label.hide(for='login-email') Email
+                input#login-email.form-control.input-lg.c-square(type='email', placeholder='Email')
+              .form-group
+                label.hide(for='login-password') Password
+                input#login-password.form-control.input-lg.c-square(type='password', placeholder='Password')
+              .form-group
+                .c-checkbox
+                  input#login-rememberme.c-check(type='checkbox')
+                  label.c-font-thin.c-font-17(for='login-rememberme')
+                    span
+                    span.check
+                    span.box
+                    |               Remember Me
+              .form-group
+                button.btn.c-theme-btn.btn-md.c-btn-uppercase.c-btn-bold.c-btn-square.c-btn-login(type='submit') Login
+                a.c-btn-forgot(href='javascript:;', data-toggle='modal', data-target='#forget-password-form', data-dismiss='modal') Forgot Your Password ?
+              .clearfix
+                .c-content-divider.c-divider-sm.c-icon-bg.c-bg-grey.c-margin-b-20
+                  span(style='width: 110px') or signup with
+                ul.c-content-list-adjusted
+                  li
+                    a.btn.btn-block.c-btn-square.btn-social.btn-twitter
+                      i.fa.fa-twitter
+                      |                 Twitter
+                  li
+                    a.btn.btn-block.c-btn-square.btn-social.btn-facebook
+                      i.fa.fa-facebook
+                      |                 Facebook
+                  li
+                    a.btn.btn-block.c-btn-square.btn-social.btn-google
+                      i.fa.fa-google
+                      |                 Google
+          .modal-footer.c-no-border
+            span.c-text-account Don't Have An Account Yet ?
+            a.btn.c-btn-dark-1.btn.c-btn-uppercase.c-btn-bold.c-btn-slim.c-btn-border-2x.c-btn-square.c-btn-signup(href='javascript:;', data-toggle='modal', data-target='#signup-form', data-dismiss='modal') Signup!
+    // END: CONTENT/USER/LOGIN-FORM
+    // BEGIN: LAYOUT/SIDEBARS/QUICK-SIDEBAR
+    nav.c-layout-quick-sidebar
+      .c-header
+        button.c-link.c-close(type='button')
+          i.icon-login
+      .c-content
+        .c-section
+          h3 Theme Colors
+          .c-settings
+            span.c-color.c-default.c-active(data-color='default')
+            span.c-color.c-green1(data-color='green1')
+            span.c-color.c-green2(data-color='green2')
+            span.c-color.c-green3(data-color='green3')
+            span.c-color.c-yellow1(data-color='yellow1')
+            span.c-color.c-yellow2(data-color='yellow2')
+            span.c-color.c-yellow3(data-color='yellow3')
+            span.c-color.c-red1(data-color='red1')
+            span.c-color.c-red2(data-color='red2')
+            span.c-color.c-red3(data-color='red3')
+            span.c-color.c-purple1(data-color='purple1')
+            span.c-color.c-purple2(data-color='purple2')
+            span.c-color.c-purple3(data-color='purple3')
+            span.c-color.c-blue1(data-color='blue1')
+            span.c-color.c-blue2(data-color='blue2')
+            span.c-color.c-blue3(data-color='blue3')
+            span.c-color.c-brown1(data-color='brown1')
+            span.c-color.c-brown2(data-color='brown2')
+            span.c-color.c-brown3(data-color='brown3')
+            span.c-color.c-dark1(data-color='dark1')
+            span.c-color.c-dark2(data-color='dark2')
+            span.c-color.c-dark3(data-color='dark3')
+        .c-section
+          h3 Header Type
+          .c-settings
+            input.c-setting_header-type.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='boxed', value='boxed')
+            input.c-setting_header-type.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='fluid', value='fluid')
+        .c-section
+          h3 Header Mode
+          .c-settings
+            input.c-setting_header-mode.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='fixed', value='fixed')
+            input.c-setting_header-mode.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='static', value='static')
+        .c-section
+          h3 Mega Menu Style
+          .c-settings
+            input.c-setting_megamenu-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='dark', value='dark')
+            input.c-setting_megamenu-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='light', value='light')
+        .c-section
+          h3 Font Style
+          .c-settings
+            input.c-setting_font-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='default', value='default')
+            input.c-setting_font-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='light', value='light')
+    // END: LAYOUT/SIDEBARS/QUICK-SIDEBAR
+    // BEGIN: PAGE CONTAINER
+    .c-layout-page
+      // BEGIN: PAGE CONTENT
+      // BEGIN: CONTENT/PRODUCTS/PRODUCT-1
+      .c-content-box.c-size-md.c-bg-white.c-no-bottom-padding
+        .container
+          .c-content-product-1.c-opt-1
+            .c-content-title-1
+              h3.c-center.c-font-uppercase.c-font-bold Hosting y Correos Corporativos
+              .c-line-center
+            .row
+              .col-md-4
+                .c-media
+                  img(src='../../assets/base/img/servicios/hosting/index-intro.png', alt='Imagen de Hosting y Correos Corporativos de Devs Imagen Digital')
+              .col-md-8
+                .c-body
+                  ul.c-row
+                    li
+                      h4 Lo esencial en tu imagen digital 
+                      p
+                        | Todo comienza con "tunegocio.com"
+                    li
+                      h4 Mejor presencia y postura
+                      p
+                        | ¿Usas gmail o outlook para tu marca?. Dales a tus clientes un correo@tunegocio.com
+                  ul.c-row
+                    li
+                      h4 Velocidad y eficacia
+                      p
+                        | ¿Tienes una web pero te da problemas? Trasládate y olvídate de ellos.
+                    li
+                      h4 Soporte completo
+                      p
+                        | Estaremos contigo 24/7 para resolver tus problemas y dudas.
+                  button.btn.btn-md.c-btn-border-2x.c-btn-square.c-btn-regular.c-btn-uppercase.c-btn-bold.c-margin-b-100(onclick="window.location.href='#tipos'", type='button') Ver Más 
+      // END: CONTENT/PRODUCTS/PRODUCT-1
+      // BEGIN: CONTENT/TABS/TAB-1
+      #tipos.c-content-box.c-size-md.c-no-bottom-padding.c-overflow-hide
+        .c-container
+          .row
+            .col-md-12
+              .c-content-title-1
+                h3.c-font-34.c-font-center.c-font-bold.c-font-uppercase.c-margin-b-30
+                  | Productos
+                .c-line-center.c-theme-bg
+          .row
+            .col-md-12
+              .c-content-tab-2.c-theme.c-opt-1
+                ul.nav.c-tab-icon-stack.c-font-sbold.c-font-uppercase
+                  li.active
+                    a(href='#c-tab2-opt1-1', data-toggle='tab')
+                      span.c-content-line-icon.c-icon-25
+                      span.c-title Hosting
+                    .c-arrow
+                  li
+                    a(href='#c-tab2-opt1-2', data-toggle='tab')
+                      span.c-content-line-icon.c-icon-46
+                      span.c-title Correos Corporativos
+                    .c-arrow
+                  li
+                    a(href='#c-tab2-opt1-3', data-toggle='tab')
+                      span.c-content-line-icon.c-icon-28
+                      span.c-title Dominios
+                    .c-arrow
+                .c-tab-content
+                  .c-bg-img-center1(style='background-image: url(../../assets/base/img/servicios/hosting/index-fondo.png)')
+                    .container
+                      .tab-content
+                        #c-tab2-opt1-1.tab-pane.fade.in.active
+                          .c-tab-pane
+                            img.img-responsive(src='../../assets/base/img/servicios/hosting/index-tipo-hosting.png', alt='Imagen de descripción de Hosting de Devs Imagen Digital')
+                            h4.c-font-30.c-font-thin.c-font-uppercase.c-font-bold  Almacenamiento de calidad. 
+                            p.c-font-17.c-margin-b-20.c-margin-t-20.c-font-thin
+                              | Un hosting es el lugar donde está alojado tu sitio web. 
+                              br
+                              |                            Si estás pensando en algún nuevo proyecto y no tienes donde alojarlo, nosotros tenemos los mejores planes para ti. 
+                              br
+                              |                            Si ya tienes una web y te da problemas, trasládate y nosotros nos encargaremos de quitarte tus dolores de cabeza.
+                            button.btn.btn-sm.c-theme-btn.c-btn-square.c-btn-bold(onclick="window.location.href='#planes'")
+                              | Ver Más
+                        #c-tab2-opt1-2.tab-pane.fade
+                          .c-tab-pane
+                            img.img-responsive(src='../../assets/base/img/servicios/hosting/index-tipo-correos.png', alt='Imagen de Descripción de Correos Corporativos de Devs Imagen Digital')
+                            h4.c-font-30.c-font-thin.c-font-uppercase.c-font-bold  Un correo es crucial para tu imagen 
+                            p.c-font-17.c-margin-b-20.c-margin-t-20.c-font-thin
+                              | Si tienes una marca o negocio que recién inicia o si estás creciendo, no puedes seguir usando gmail o hotmail. 
+                              br
+                              |                            Ten tu correo corporativo como contacto@tunegocio.com y haz que todos recuerden tu marca al contactarse contigo.
+                            button.btn.btn-sm.c-theme-btn.c-btn-square.c-btn-bold(onclick="window.location.href='#planes'")
+                              | Ver Más
+                        #c-tab2-opt1-3.tab-pane.fade
+                          .c-tab-pane
+                            img.img-responsive(src='../../assets/base/img/servicios/hosting/index-tipo-dominios.png', alt='Imagen de descripción de Dominio de Devs Imagen Digital')
+                            h4.c-font-30.c-font-thin.c-font-uppercase.c-font-bold  Un domino es el inicio de tu imagen digital.
+                            p.c-font-17.c-margin-b-20.c-margin-t-20.c-font-thin
+                              | Un dominio es el nombre que tienes en internet, ¿ves en la parte superior, donde dice devs.com.pe/...? 
+                              br
+                              |                            Ese devs.com.pe es el domino. ¡Y tu puedes tener uno!, imagina tunegocio.com en internet.
+                              br
+                              | Sin un dominio estás fuera de internet.
+                            button.btn.btn-sm.c-theme-btn.c-btn-square.c-btn-bold(onclick="window.location.href='#planes'")
+                              | Ver Más
+      // END: CONTENT/TABS/TAB-1
+      // ===== PASOS ======
+      .c-content-box.c-size-md.c-bg-white
+        .container
+          .row
+            .col-md-12
+              .c-content-title-1.c-margin-b-60
+                h3.c-center.c-font-uppercase.c-font-bold
+                  | ¿Cómo lo hacemos?
+                .c-line-center
+                p.c-center.c-font-uppercase.c-font-17
+                  | En menos de 2 días tendrás tu producto listo.
+          .row
+            .col-md-3.col-sm-6
+              .c-content-step-1.c-opt-1
+                .c-icon
+                  span.c-hr.c-hr-first
+                    span.c-content-line-icon.c-icon-23.c-theme
+                .c-title.c-font-20.c-font-bold.c-font-uppercase
+                  | 1. Asesoría especializada
+                .c-description.c-font-17
+                  | Cuéntanos tus objetivos y en base a ello te recomendamos lo mejor para tu marca.
+                //
+                  BOTON <button class="btn c-btn-square c-theme-btn c-btn-border1-2x c-btn-uppercase c-btn-bold">EXPLORE</button>
+            .col-md-3.col-sm-6
+              .c-content-step-1.c-opt-1
+                .c-icon
+                  span.c-hr
+                    span.c-content-line-icon.c-icon-27.c-theme
+                .c-title.c-font-20.c-font-bold.c-font-uppercase
+                  | 2. Búsqueda de dominio / traslado
+                .c-description.c-font-17
+                  | Para un correo tendremos que verificar que los nombres están libres, si quieres trasladarte, nos encargamos también.
+            .col-md-3.col-sm-12
+              .c-content-step-1.c-opt-1
+                .c-icon
+                  span.c-hr
+                    span.c-content-line-icon.c-icon-11.c-theme
+                .c-title.c-font-20.c-font-bold.c-font-uppercase
+                  | 3. Finalización y configuración
+                .c-description.c-font-17
+                  | Teniendo todo listo, solo queda unos toques finales.
+            .col-md-3.col-sm-6
+              .c-content-step-1.c-opt-1
+                .c-icon
+                  span.c-hr.c-hr-last
+                    span.c-content-line-icon.c-icon-17.c-theme
+                .c-title.c-font-20.c-font-bold.c-font-uppercase
+                  | 4. Entrega y capacitación.
+                .c-description.c-font-17
+                  | Si, te capacitamos para que puedas usar de la mejor manera tu nuevo producto.
+      // =====FIN: PASOS=====
+      // BEGIN: CONTENT/PRICING/PRICING-6
+      #planes.c-content-box.c-size-md(style='background-color: #214e7a')
+        .container
+          .row
+            .col-md-12
+              .c-content-title-1.c-title-pricing-1
+                h3.c-font-green
+                  span.c-font-bold.c-font-white Elige tu plan
+          .row
+            .c-content-pricing-1.c-opt-2
+              .col-md-2.c-sm-hidden
+                .c-content.c-column-odd.c-padding-adjustment
+                  .c-row.c-type.c-font-20.c-align-left
+                    strong Características
+                  .c-row.c-title.c-font-17
+                    | Dominio .COM
+                  .c-row.c-title.c-font-17
+                    | Almacenamiento
+                  .c-row.c-title.c-font-17
+                    | Tráfico
+                  .c-row.c-title.c-font-17
+                    | Correos
+                  .c-row.c-title.c-font-17
+                    | Tamaño Correos
+                  .c-row.c-title.c-font-17
+                    strong Pago Anual
+                  .c-row.c-empty
+              .col-md-2.col-sm-4
+                .c-content.c-column-even.c-padding-adjustment
+                  .c-row.c-type.c-font-20
+                    strong Basic
+                  .c-row.c-font-17
+                    i.fa.fa-check.c-font-20
+                  .c-row
+                    // <i class="fa fa-check c-font-20">
+                    span.c-sub-title  Almacenamiento
+                    |                 50 MB
+                  .c-row
+                    span.c-sub-title Tráfico
+                    |                 250 MB
+                  .c-row
+                    span.c-sub-title Correos
+                    |                 1
+                    // <i class="fa fa-times c-font-20"></i>
+                  .c-row
+                    span.c-sub-title Tamaño
+                    |                 75 MB
+                  .c-row.c-price.c-font-white
+                    span.c-dollar.c-font-20 S/.
+                    span.c-font-30.c-font-bold 45
+                  .c-row.c-purchase.c-font-white
+                    a(href='/contacto')
+                      button.btn.btn-md.c-btn-square.c-btn-green.c-btn-uppercase.c-btn-bold Adquirir
+              .col-md-2.col-sm-4
+                .c-content.c-column-odd.c-padding-adjustment
+                  .c-row.c-type.c-font-20
+                    strong Starter
+                  .c-row.c-font-17
+                    i.fa.fa-check.c-font-20
+                  .c-row
+                    // <i class="fa fa-check c-font-20">
+                    span.c-sub-title  Almacenamiento
+                    |                 200 MB
+                  .c-row
+                    span.c-sub-title Tráfico
+                    |                 2 GB
+                  .c-row
+                    span.c-sub-title Correos
+                    |                 3
+                    // <i class="fa fa-times c-font-20"></i>
+                  .c-row
+                    span.c-sub-title Tamaño
+                    |                 250 MB
+                  .c-row.c-price.c-font-white
+                    span.c-dollar.c-font-20 S/.
+                    span.c-font-30.c-font-bold 60
+                  .c-row.c-purchase
+                    a(href='/contacto')
+                      button.btn.btn-md.c-btn-square.c-btn-green.c-btn-uppercase.c-btn-bold Adquirir
+              .col-md-2.col-sm-4
+                .c-content.c-column-even
+                  .c-row.c-type.c-font-20
+                    strong Emprendedor
+                  .c-row.c-font-17
+                    i.fa.fa-check.c-font-20
+                  .c-row
+                    // <i class="fa fa-check c-font-20">
+                    span.c-sub-title  Almacenamiento
+                    |                 500 MB
+                  .c-row
+                    span.c-sub-title Tráfico
+                    |                 5 GB
+                  .c-row
+                    span.c-sub-title Correos
+                    |                 10
+                    // <i class="fa fa-times c-font-20"></i>
+                  .c-row
+                    span.c-sub-title Tamaño
+                    |                 1 GB
+                  .c-row.c-price.c-font-white
+                    span.c-dollar.c-font-20 S/.
+                    span.c-font-30.c-font-bold 100
+                  .c-row.c-purchase
+                    a(href='/contacto')
+                      button.btn.btn-md.c-btn-square.c-btn-green.c-btn-uppercase.c-btn-bold Adquirir
+              .col-md-2.col-sm-4
+                .c-content.c-column-odd.c-padding-adjustment
+                  .c-row.c-type.c-font-20
+                    strong Business
+                  .c-row.c-font-17
+                    i.fa.fa-check.c-font-20
+                  .c-row
+                    // <i class="fa fa-check c-font-20">
+                    span.c-sub-title  Almacenamiento
+                    |                 2 GB
+                  .c-row
+                    span.c-sub-title Tráfico
+                    |                 20 GB
+                  .c-row
+                    span.c-sub-title Correos
+                    |                 25
+                    // <i class="fa fa-times c-font-20"></i>
+                  .c-row
+                    span.c-sub-title Tamaño
+                    |                 4 GB
+                  .c-row.c-price.c-font-white
+                    span.c-dollar.c-font-20 S/.
+                    span.c-font-30.c-font-bold 200
+                  .c-row.c-purchase
+                    a(href='/contacto')
+                      button.btn.btn-md.c-btn-square.c-btn-green.c-btn-uppercase.c-btn-bold Adquirir
+              .col-md-2.col-sm-4
+                .c-content.c-column-even
+                  .c-row.c-type.c-font-20
+                    strong Corporativo
+                  .c-row.c-font-17
+                    i.fa.fa-check.c-font-20
+                  .c-row
+                    // <i class="fa fa-check c-font-20">
+                    span.c-sub-title  Almacenamiento
+                    |                 8GB
+                  .c-row
+                    span.c-sub-title Tráfico
+                    |                 80 GB
+                  .c-row
+                    span.c-sub-title Correos
+                    |                 ilimitado
+                    // <i class="fa fa-times c-font-20"></i>
+                  .c-row
+                    span.c-sub-title Tamaño
+                    |                 8 GB
+                  .c-row.c-price.c-font-white
+                    span.c-dollar.c-font-20 S/.
+                    span.c-font-30.c-font-bold 350
+                  .c-row.c-purchase
+                    a(href='/contacto')
+                      button.btn.btn-md.c-btn-square.c-btn-green.c-btn-uppercase.c-btn-bold Adquirir
+              //
+                PROXIMO LANZAMIENTO LINK A PREGUNTAS FRECUENTES
+                <div class="col-md-12 col-sm-12">
+                <p style="text-align:right" class="c-font-white">
+                <br>
+                ¿Tienes dudas acerca de algunos términos?. <a class="c-font-white" href="../../preguntas-frecuentes.html"> <strong>Clic Aquí.</strong> </a> <br>
+                </p>
+                </div>
+      // END: CONTENT/PRICING/PRICING-6
+      // END: PAGE CONTENT
+    // END: PAGE CONTAINER
+    // BEGIN: LAYOUT/FOOTERS/FOOTER-5
+    a(name='footer')
+    footer.c-layout-footer.c-layout-footer-2
+      .container
+        .row
+          .col-md-6
+            .c-container.c-first
+              .c-content-title-1
+                h3.c-font-uppercase.c-font-bold Tu imagen digital es la prioridad 
+                .c-line-left
+                p.color-apple
+                  | En devs contamos con asesores dispuestos a visitarte, absolver todas tus dudas y brindarte asesoría especializada. 
+                  br
+                  strong
+                    i.fa.fa-whatsapp
+                    |   986 646 836 
+                    br
+                a.btn.c-theme-btn.c-btn-uppercase.c-btn-square.c-btn-bold(href='/contacto') Contáctanos
+                p
+          .col-md-6
+            .c-container.c-last
+              .c-content-title-1
+                h3.c-font-uppercase.c-font-bold ¡Síguenos! 
+                .c-line-left
+              ul.c-socials
+                li
+                  a(target='_blank', href='https://twitter.com/devsimagen')
+                    i.icon-social-twitter
+                li
+                  a(target='_blank', href='https://www.facebook.com/devsimagendigital/')
+                    i.icon-social-facebook
+                //
+                   PROXIMO LANZAMIENTO CANAL DE YOUTUBE
+                            <li>
+                              <a target="_blank" href="youtube.com/channel/devsimagendigital"><i class="icon-social-youtube"></i></a>
+                            </li>
+                li
+                  a(target='_blank', href='https://www.linkedin.com/company/devs-imagen-digital-sac')
+                    i.fa.fa-linkedin
+              br
+              br
+              br
+              p.color-apple
+                | Revisa nuestro Blog si quieres conocer las mejores noticias en marketing digital.
+              a.btn.c-btn-border-1x.c-btn-grey-1.c-btn-square.c-btn-uppercase.c-btn-bold.c-margin-r-40(target='_blank', href='http://devs.com.pe/blog') Blog
+              | -
+        .c-copyright
+          p.c-font-oswald.c-font-14
+            | Copyright © Devs Imagen Digital SAC
+    // END: LAYOUT/FOOTERS/FOOTER-5
+    // BEGIN: LAYOUT/FOOTERS/GO2TOP
+    .c-layout-go2top
+      i.icon-arrow-up
+    // END: LAYOUT/FOOTERS/GO2TOP
+    // BEGIN: LAYOUT/BASE/BOTTOM
+    // BEGIN: CORE PLUGINS
+    //if lt IE 9
+      script(src='../../../assets/global/plugins/excanvas.min.js')
+    script(src='../../assets/plugins/jquery.min.js', type='text/javascript')
+    script(src='../../assets/plugins/jquery-migrate.min.js', type='text/javascript')
+    script(src='../../assets/plugins/bootstrap/js/bootstrap.min.js', type='text/javascript')
+    // END: CORE PLUGINS
+    // BEGIN: LAYOUT PLUGINS
+    script(src='../../assets/plugins/revo-slider/js/jquery.themepunch.tools.min.js', type='text/javascript')
+    script(src='../../assets/plugins/revo-slider/js/jquery.themepunch.revolution.min.js', type='text/javascript')
+    script(src='../../assets/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js', type='text/javascript')
+    script(src='../../assets/plugins/owl-carousel/owl.carousel.min.js', type='text/javascript')
+    script(src='../../assets/plugins/counterup/jquery.waypoints.min.js', type='text/javascript')
+    script(src='../../assets/plugins/counterup/jquery.counterup.min.js', type='text/javascript')
+    script(src='../../assets/plugins/fancybox/jquery.fancybox.pack.js', type='text/javascript')
+    // END: LAYOUT PLUGINS
+    // BEGIN: THEME SCRIPTS
+    script(src='../../assets/base/js/components.js', type='text/javascript')
+    script(src='../../assets/base/js/app.js', type='text/javascript')
+    script.
+      $(document).ready(function() {
+      App.init(); // init core
+      // init main slider
+      var slider = $('.c-layout-revo-slider .tp-banner');
+      var cont = $('.c-layout-revo-slider .tp-banner-container');
+      var api = slider.show().revolution({
+      delay: 15000,
+      startwidth:1170,
+      startheight: 620,
+      navigationType: "hide",
+      navigationArrows: "solo",
+      touchenabled: "on",
+      onHoverStop: "on",
+      keyboardNavigation: "off",
+      navigationStyle: "circle",
+      navigationHAlign: "center",
+      navigationVAlign: "bottom",
+      spinner: "spinner2",
+      fullScreen: "on",
+      fullScreenAlignForce:"on",
+      fullScreenOffsetContainer: (App.getViewPort().width < App.getBreakpoint('md') ? '.c-layout-header' : ''),
+      shadow: 0,
+      fullWidth: "off",
+      forceFullWidth: "off",
+      hideTimerBar:"on",
+      hideThumbsOnMobile: "on",
+      hideNavDelayOnMobile: 1500,
+      hideBulletsOnMobile: "on",
+      hideArrowsOnMobile: "on",
+      hideThumbsUnderResolution: 0
+      });
+      });
+    // END: THEME SCRIPTS
+    // END: LAYOUT/BASE/BOTTOM

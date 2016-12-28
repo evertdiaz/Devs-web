@@ -1,0 +1,739 @@
+extends layout
+
+block content
+  body.c-layout-header-fixed.c-layout-header-fullscreen.c-layout-header-topbar
+    // BEGIN: LAYOUT/HEADERS/HEADER-1
+    // BEGIN: HEADER
+    header.c-layout-header.c-layout-header-default.c-layout-header-default-mobile
+      .c-navbar
+        .container
+          // BEGIN: BRAND
+          .c-navbar-wrapper.clearfix
+            .c-brand.c-pull-left
+              a.c-logo(href='/')
+                img.c-desktop-logo(src='assets/base/img/logos/logo-1.png', alt='Logo de Devs')
+                img.c-desktop-logo-inverse(src='assets/base/img/logos/logo-1.png', alt='Logo de Devs')
+                img.c-mobile-logo(src='assets/base/img/logos/logo-1.png', alt='Logo de Devs')
+              button.c-hor-nav-toggler(type='button', data-target='.c-mega-menu')
+                span.c-line
+                span.c-line
+                span.c-line
+              //
+                PROXIMO LANZMAIENTO BUSQUEDA
+                <button class="c-search-toggler" type="button">
+                <i class="fa fa-search"></i>
+                </button>
+            // END: BRAND
+            // BEGIN: QUICK SEARCH
+            form.c-quick-search(action='#')
+              input.form-control(type='text', name='query', placeholder='Type to search...', value='', autocomplete='off')
+              span.c-theme-link ×
+            // END: QUICK SEARCH
+            // BEGIN: HOR NAV
+            // BEGIN: LAYOUT/HEADERS/MEGA-MENU
+            // BEGIN: MEGA MENU
+            nav.c-mega-menu.c-pull-right.c-mega-menu-dark.c-mega-menu-dark-mobile.c-fonts-uppercase.c-fonts-bold
+              // BEGIN: MEGA MENU
+              ul.nav.navbar-nav.c-theme-nav
+                li.c-active.c-menu-type-classic
+                  a.c-link(href='/') Inicio
+                li.c-menu-type-classic
+                  a.c-link.dropdown-toggle Servicios
+                  ul.dropdown-menu.c-menu-type-classic.c-pull-left
+                    li
+                      a(href='/web') Desarrollo Web
+                    li
+                      a(href='/hosting') Hosting
+                    //
+                      PROXIMO LANZAMIENTO
+                      <li class="dropdown-submenu">
+                      <a href="servicios/posicionamiento/index.html">Posicionamiento</a>
+                      </li>
+                      <li class="dropdown-submenu">
+                      <a href="servicios/redes-sociales/index.html">Redes Sociales</a>
+                      </li>
+                      <li class="dropdown-submenu">
+                      <a href="servicios/consultoria/index.html">Consultoría</a>
+                      </li>
+                //
+                  PROXIMO LANZAMIENTO
+                  <li class="c-menu-type-classic">
+                  <a href="#" class="c-link">Blog</a>
+                  </li>
+                  <li class="c-menu-type-classic">
+                  <a href="#" class="c-link">Arma tu producto</a>
+                  </li>
+                li.c-menu-type-classic
+                  a.c-link(href='/contacto') Contacto
+                //
+                  OTROS ELEMENTOS
+                  <li class="c-search-toggler-wrapper">
+                  <a href="#" class="c-btn-icon c-search-toggler"><i class="fa fa-search"></i></a>
+                  </li>
+                  <li>
+                  <a href="javascript:;" data-toggle="modal" data-target="#login-form" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold"><i class="icon-user"></i> Sign In</a>
+                  </li>
+                  <li class="c-quick-sidebar-toggler-wrapper">
+                  <a href="#" class="c-quick-sidebar-toggler">
+                  <span class="c-line"></span>
+                  <span class="c-line"></span>
+                  <span class="c-line"></span>
+                  </a>
+                  </li>
+              // END MEGA MENU
+            // END: MEGA MENU
+            // END: LAYOUT/HEADERS/MEGA-MENU
+            // END: HOR NAV
+    // END: HEADER
+    // END: LAYOUT/HEADERS/HEADER-1
+    // BEGIN: CONTENT/USER/FORGET-PASSWORD-FORM
+    #forget-password-form.modal.fade.c-content-login-form(role='dialog')
+      .modal-dialog
+        .modal-content.c-square
+          .modal-header.c-no-border
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            h3.c-font-24.c-font-sbold Password Recovery
+            p
+              | To recover your password please fill in your email address
+            form
+              .form-group
+                label.hide(for='forget-email') Email
+                input#forget-email.form-control.input-lg.c-square(type='email', placeholder='Email')
+              .form-group
+                button.btn.c-theme-btn.btn-md.c-btn-uppercase.c-btn-bold.c-btn-square.c-btn-login(type='submit') Submit
+                a.c-btn-forgot(href='javascript:;', data-toggle='modal', data-target='#login-form', data-dismiss='modal') Back To Login
+          .modal-footer.c-no-border
+            span.c-text-account Don't Have An Account Yet ?
+            a.btn.c-btn-dark-1.btn.c-btn-uppercase.c-btn-bold.c-btn-slim.c-btn-border-2x.c-btn-square.c-btn-signup(href='javascript:;', data-toggle='modal', data-target='#signup-form', data-dismiss='modal') Signup!
+    // END: CONTENT/USER/FORGET-PASSWORD-FORM
+    // BEGIN: CONTENT/USER/SIGNUP-FORM
+    #signup-form.modal.fade.c-content-login-form(role='dialog')
+      .modal-dialog
+        .modal-content.c-square
+          .modal-header.c-no-border
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            h3.c-font-24.c-font-sbold Create An Account
+            p
+              | Please fill in below form to create an account with us
+            form
+              .form-group
+                label.hide(for='signup-email') Email
+                input#signup-email.form-control.input-lg.c-square(type='email', placeholder='Email')
+              .form-group
+                label.hide(for='signup-username') Username
+                input#signup-username.form-control.input-lg.c-square(type='email', placeholder='Username')
+              .form-group
+                label.hide(for='signup-fullname') Fullname
+                input#signup-fullname.form-control.input-lg.c-square(type='email', placeholder='Fullname')
+              .form-group
+                label.hide(for='signup-country') Country
+                select#signup-country.form-control.input-lg.c-square
+                  option(value='1') Country
+              .form-group
+                button.btn.c-theme-btn.btn-md.c-btn-uppercase.c-btn-bold.c-btn-square.c-btn-login(type='submit') Signup
+                a.c-btn-forgot(href='javascript:;', data-toggle='modal', data-target='#login-form', data-dismiss='modal') Back To Login
+    // END: CONTENT/USER/SIGNUP-FORM
+    // BEGIN: CONTENT/USER/LOGIN-FORM
+    #login-form.modal.fade.c-content-login-form(role='dialog')
+      .modal-dialog
+        .modal-content.c-square
+          .modal-header.c-no-border
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            h3.c-font-24.c-font-sbold Good Afternoon!
+            p
+              | Let's make today a great day!
+            form
+              .form-group
+                label.hide(for='login-email') Email
+                input#login-email.form-control.input-lg.c-square(type='email', placeholder='Email')
+              .form-group
+                label.hide(for='login-password') Password
+                input#login-password.form-control.input-lg.c-square(type='password', placeholder='Password')
+              .form-group
+                .c-checkbox
+                  input#login-rememberme.c-check(type='checkbox')
+                  label.c-font-thin.c-font-17(for='login-rememberme')
+                    span
+                    span.check
+                    span.box
+                    |               Remember Me
+              .form-group
+                button.btn.c-theme-btn.btn-md.c-btn-uppercase.c-btn-bold.c-btn-square.c-btn-login(type='submit') Login
+                a.c-btn-forgot(href='javascript:;', data-toggle='modal', data-target='#forget-password-form', data-dismiss='modal') Forgot Your Password ?
+              .clearfix
+                .c-content-divider.c-divider-sm.c-icon-bg.c-bg-grey.c-margin-b-20
+                  span(style='width: 110px') or signup with
+                ul.c-content-list-adjusted
+                  li
+                    a.btn.btn-block.c-btn-square.btn-social.btn-twitter
+                      i.fa.fa-twitter
+                      |                 Twitter
+                  li
+                    a.btn.btn-block.c-btn-square.btn-social.btn-facebook
+                      i.fa.fa-facebook
+                      |                 Facebook
+                  li
+                    a.btn.btn-block.c-btn-square.btn-social.btn-google
+                      i.fa.fa-google
+                      |                 Google
+          .modal-footer.c-no-border
+            span.c-text-account Don't Have An Account Yet ?
+            a.btn.c-btn-dark-1.btn.c-btn-uppercase.c-btn-bold.c-btn-slim.c-btn-border-2x.c-btn-square.c-btn-signup(href='javascript:;', data-toggle='modal', data-target='#signup-form', data-dismiss='modal') Signup!
+    // END: CONTENT/USER/LOGIN-FORM
+    // BEGIN: LAYOUT/SIDEBARS/QUICK-SIDEBAR
+    nav.c-layout-quick-sidebar
+      .c-header
+        button.c-link.c-close(type='button')
+          i.icon-login
+      .c-content
+        .c-section
+          h3 Theme Colors
+          .c-settings
+            span.c-color.c-default.c-active(data-color='default')
+            span.c-color.c-green1(data-color='green1')
+            span.c-color.c-green2(data-color='green2')
+            span.c-color.c-green3(data-color='green3')
+            span.c-color.c-yellow1(data-color='yellow1')
+            span.c-color.c-yellow2(data-color='yellow2')
+            span.c-color.c-yellow3(data-color='yellow3')
+            span.c-color.c-red1(data-color='red1')
+            span.c-color.c-red2(data-color='red2')
+            span.c-color.c-red3(data-color='red3')
+            span.c-color.c-purple1(data-color='purple1')
+            span.c-color.c-purple2(data-color='purple2')
+            span.c-color.c-purple3(data-color='purple3')
+            span.c-color.c-blue1(data-color='blue1')
+            span.c-color.c-blue2(data-color='blue2')
+            span.c-color.c-blue3(data-color='blue3')
+            span.c-color.c-brown1(data-color='brown1')
+            span.c-color.c-brown2(data-color='brown2')
+            span.c-color.c-brown3(data-color='brown3')
+            span.c-color.c-dark1(data-color='dark1')
+            span.c-color.c-dark2(data-color='dark2')
+            span.c-color.c-dark3(data-color='dark3')
+        .c-section
+          h3 Header Type
+          .c-settings
+            input.c-setting_header-type.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='boxed', value='boxed')
+            input.c-setting_header-type.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='fluid', value='fluid')
+        .c-section
+          h3 Header Mode
+          .c-settings
+            input.c-setting_header-mode.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='fixed', value='fixed')
+            input.c-setting_header-mode.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='static', value='static')
+        .c-section
+          h3 Mega Menu Style
+          .c-settings
+            input.c-setting_megamenu-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='dark', value='dark')
+            input.c-setting_megamenu-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='light', value='light')
+        .c-section
+          h3 Font Style
+          .c-settings
+            input.c-setting_font-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase.active(type='button', data-value='default', value='default')
+            input.c-setting_font-style.btn.btn-sm.c-btn-square.c-btn-border-1x.c-btn-white.c-btn-sbold.c-btn-uppercase(type='button', data-value='light', value='light')
+    // END: LAYOUT/SIDEBARS/QUICK-SIDEBAR
+    // BEGIN: PAGE CONTAINER
+    .c-layout-page
+      // BEGIN: PAGE CONTENT
+      // BEGIN: LAYOUT/SLIDERS/REVO-SLIDER-1
+      section.c-layout-revo-slider.c-layout-revo-slider-1
+        .tp-banner-container.tp-fullscreen.tp-fullscreen-mobile
+          .tp-banner
+            ul
+              // BEGIN: SLIDE #1
+              li(data-transition='fade', data-slotamount='1', data-masterspeed='1000', data-style='dark')
+                img(alt='Slide 1, Devs Imagen Digital', src='assets/base/img/index-slide1.png', data-bgposition='center center', data-bgfit='cover', data-bgrepeat='no-repeat')
+                // BEGIN: MAIN TITLE
+                .caption.customin.customout.tp-resizeme(data-x='center', data-y='center', data-hoffset='', data-voffset='-30', data-speed='500', data-start='1500', data-customin='x:0;y:0;z:0;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-customout='x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-easing='Back.easeOut', data-splitin='none', data-splitout='none', data-elementdelay='0.1', data-endelementdelay='0.1', data-endspeed='600')
+                  h3.c-font-55.c-font-bold.c-font-center.c-font-uppercase.c-font-white.c-block
+                    | Bienvenido
+                    br
+                    |              a tu nueva Imagen Digital
+                // END
+                //
+                  BEGIN: ACTION BUTTON
+                  <div class="caption randomrotateout tp-resizeme" data-x="center" data-y="center" data-hoffset="" data-voffset="120" data-speed="500" data-start="2000" data-easing="Back.easeOut">
+                  <a href="#" class="c-action-btn btn c-btn-square c-btn-border-2x c-btn-white c-btn-bold c-btn-uppercase">DEVS</a>
+                  </div>
+                  END
+              // END
+              // BEGIN: SLIDE #2
+              li(data-transition='fade', data-slotamount='1', data-masterspeed='1000', data-style='dark')
+                img(alt='Slide 2, Devs Imagen Digital', src='assets/base/img/index-slide2.png', data-bgposition='center center', data-bgfit='cover', data-bgrepeat='no-repeat')
+                // BEGIN: MAIN TITLE
+                .caption.customin.customout.tp-resizeme(data-x='center', data-y='center', data-hoffset='', data-voffset='-30', data-speed='500', data-start='1500', data-customin='x:0;y:0;z:0;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-customout='x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-easing='Back.easeOut', data-splitin='none', data-splitout='none', data-elementdelay='0.1', data-endelementdelay='0.1', data-endspeed='600')
+                  h3.c-font-55.c-font-bold.c-font-center.c-font-uppercase.c-font-white.c-block
+                    | No te quedes atrás
+                    br
+                    |             convierte tu idea en realidad
+                // END
+                //
+                  BEGIN: ACTION BUTTON
+                  <div class="caption randomrotateout tp-resizeme" data-x="center" data-y="center" data-hoffset="" data-voffset="120" data-speed="500" data-start="2000" data-easing="Back.easeOut">
+                  <a href="#" class="c-action-btn btn c-btn-square c-btn-border-2x c-btn-white c-btn-bold c-btn-uppercase">Explore</a>
+                  </div>
+                  END
+              // END
+              // BEGIN: SLIDE #3 - VIDEO SLIDER
+              li(data-transition='fade', data-slotamount='8', data-masterspeed='700', data-delay='6000', data-thumb='')
+                // THE MAIN IMAGE IN THE FIRST SLIDE
+                img(src='assets/base/img/layout/sliders/revo-slider/base/blank.png', alt='Slide Principal blank, Devs Imagen Digital')
+                .caption.fulllscreenvideo.tp-videolayer(data-x='0', data-y='0', data-speed='600', data-start='1000', data-easing='Power4.easeOut', data-endspeed='500', data-endeasing='Power4.easeOut', data-autoplay='true', data-autoplayonlyfirsttime='false', data-nextslideatend='true', data-videowidth='100%', data-videoheight='100%', data-videopreload='meta', data-videomp4='assets/base/media/video/video-2.mp4', data-videowebm='', data-videocontrols='none', data-forcecover='1', data-forcerewind='on', data-aspectratio='16:9', data-volume='mute', data-videoposter='assets/base/img/layout/sliders/revo-slider/base/blank.png')
+                .caption.customin.customout.tp-resizeme(data-x='center', data-y='center', data-hoffset='', data-voffset='-30', data-speed='500', data-start='1000', data-customin='x:0;y:0;z:0;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-customout='x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;', data-easing='Back.easeOut', data-splitin='none', data-splitout='none', data-elementdelay='0.1', data-endelementdelay='0.1', data-endspeed='600')
+                  h3.c-font-55.c-font-bold.c-font-center.c-font-uppercase.c-font-white.c-block
+                    | Amamos lo que hacemos
+                    br
+                    |              y tu marca lo notará
+                //
+                  ACTION BUTTON
+                  <div class="caption lft tp-resizeme" data-x="center" data-y="center" data-voffset="130" data-speed="900" data-start="2000" data-easing="easeOutExpo">
+                  <a href="#" class="c-action-btn btn c-btn-square c-btn-border-2x c-btn-white c-btn-bold c-btn-uppercase">DEVS</a>
+                  </div>
+                // END
+              // END
+      // END: LAYOUT/SLIDERS/REVO-SLIDER-1
+      // ===== PASOS ======
+      .c-content-box.c-size-md.c-bg-white
+        .container
+          .row
+            .col-md-12
+              .c-content-title-1.c-margin-b-60
+                h3.c-center.c-font-uppercase.c-font-bold
+                  | ¿Por qué tener imagen digital?
+                .c-line-center
+                p.c-center.c-font-uppercase.c-font-17
+                  | Tus clientes te están buscando.
+          .row
+            .col-md-4.col-sm-6
+              .c-content-step-1.c-opt-1
+                .c-icon
+                  span.c-hr.c-hr-first
+                    span.c-content-line-icon.c-icon-14.c-theme
+                .c-title.c-font-20.c-font-bold.c-font-uppercase
+                  | 1. Tiempo
+                .c-description.c-font-17
+                  | Cuando tu marca o negocio está en internet no necesitas estar presente todo el día, una web permite tener tu negocio abierto todo el día.
+                //
+                  BOTON <button class="btn c-btn-square c-theme-btn c-btn-border1-2x c-btn-uppercase c-btn-bold">EXPLORE</button>
+            .col-md-4.col-sm-6
+              .c-content-step-1.c-opt-1
+                .c-icon
+                  span.c-hr
+                    span.c-content-line-icon.c-icon-29.c-theme
+                .c-title.c-font-20.c-font-bold.c-font-uppercase
+                  | 2. Alcance
+                .c-description.c-font-17
+                  | Cualquier persona puede encontrarte, tus nuevos clientes están fuera buscándote.
+            .col-md-4.col-sm-12
+              .c-content-step-1.c-opt-1
+                .c-icon
+                  span.c-hr.c-hr-last
+                    span.c-content-line-icon.c-icon-27.c-theme
+                .c-title.c-font-20.c-font-bold.c-font-uppercase
+                  | 3. Posicionamiento
+                .c-description.c-font-17
+                  | Si alguien no recuerda bien tu marca, puede buscar y contactarse contigo, antes que con la competencia.
+      // =====FIN: PASOS=====
+      // =====SERVICIOS=====
+      .c-content-box.c-size-md.c-bg-grey-1
+        .container
+          .c-content-feature-2-grid(data-auto-height='true', data-mode='base-height')
+            .c-content-title-1
+              h3.c-font-uppercase.c-center.c-font-bold ¿Qué servicio necesitas?
+              .c-line-center
+            .row
+              .col-md-4.col-sm-6
+                .c-content-feature-2.c-theme-bg-parent-hover(data-height='height')
+                  a(href='/web/basica')
+                    .c-icon-wrapper.c-theme-bg-on-parent-hover
+                      .c-content-line-icon.c-theme.c-icon-18
+                    h3.c-font-uppercase.c-font-bold.c-title Página web básica
+                    p
+                      | Una página perfecta para iniciar con tu imagen digital
+              .col-md-4.col-sm-6
+                .c-content-feature-2.c-theme-bg-parent-hover(data-height='height')
+                  a(href='/web/profesional')
+                    .c-icon-wrapper.c-theme-bg-on-parent-hover
+                      .c-content-line-icon.c-theme.c-icon-19
+                    h3.c-font-uppercase.c-font-bold.c-title Página web profesional
+                    p
+                      | ¿Buscas diferenciarte de tu competencia? Esta página es perfecta para ti.
+              .col-md-4.col-sm-6
+                .c-content-feature-2.c-theme-bg-parent-hover(data-height='height')
+                  a(href='/web/corporativa')
+                    .c-icon-wrapper.c-theme-bg-on-parent-hover
+                      .c-content-line-icon.c-theme.c-icon-13
+                    h3.c-font-uppercase.c-font-bold.c-title Página web Corporativa
+                    p
+                      | Si lo que buscas es que jamás te olviden, esta opción es para ti.
+              .col-md-4.col-sm-6
+                .c-content-feature-2.c-theme-bg-parent-hover(data-wow-delay1='2s', data-height='height')
+                  .c-icon-wrapper.c-theme-bg-on-parent-hover
+                    .c-content-line-icon.c-theme.c-icon-22
+                  //
+                    PROXIMO LANZMAIENTO
+                    <h3 class="c-font-uppercase c-font-bold c-title">Web a Medida</h3>
+                    <p>
+                    ¿Necesitas algo mas personalizado y diferente? Convierte tus ideas en realidad con esta opción.
+                    </p>
+                  h3.c-font-uppercase.c-font-bold.c-title Asesoría
+                  p
+                    | Resolvemos cualquier duda que tenas y te brindamos la mejor estrategia para tu marca.
+              .col-md-4.col-sm-6
+                a(href='/web')
+                  .c-content-v-center.c-theme-bg.wow.bounceInUp(data-wow-delay1='2s', data-height='height')
+                    .c-wrapper
+                      .c-body.c-padding-20.c-center
+                        h3.c-font-19.c-line-height-28.c-font-uppercase.c-font-white.c-font-bold
+                          | Revisa toda la información y compara nuestros productos.
+              .col-md-4.col-sm-6
+                .c-content-feature-2.c-theme-bg-parent-hover(data-wow-delay1='2s', data-height='height')
+                  a(href='/hosting')
+                    .c-icon-wrapper.c-theme-bg-on-parent-hover
+                      .c-content-line-icon.c-theme.c-icon-46
+                    h3.c-font-uppercase.c-font-bold.c-title Hosting y correos
+                    p
+                      | ¿Necesitas un mejor almacenamiento o un correo con el nombre de tu empresa? Haz click aquí.
+      // =====FIN: SERVICIOS=====
+      // =====CLIENTES=====
+      .c-content-box.c-size-md.c-bg-white
+        .container
+          // Begin: Testimonals 1 component
+          .c-content-person-1-slider(data-slider='owl', data-items='3', data-auto-play='8000')
+            // Begin: Title 1 component
+            .c-content-title-1
+              h3.c-center.c-font-uppercase.c-font-bold Ellos confiaron en nosotros
+              .c-line-center.c-theme-bg
+            // End
+            // Begin: Owlcarousel
+            .owl-carousel.owl-theme.c-theme
+              .item
+                .c-content-person-1
+                  .c-caption.c-content-overlay
+                    .c-overlay-wrapper
+                      .c-overlay-content
+                        a(target='_blank', href='http://ccpip.org.pe')
+                          i.icon-link
+                        a(href='assets/base/img/index-cliente-ccpip.png', data-lightbox='fancybox', data-fancybox-group='gallery-1')
+                          i.icon-magnifier
+                    img.c-overlay-object.img-responsive(src='assets/base/img/index-cliente-ccpip.png', alt='Logo de la Cámara de Comercio de los Pueblos Indigenas del Perú')
+                  .c-body
+                    .c-head
+                      .c-name.c-font-uppercase.c-font-bold
+                        | Cámara de Comercio de los Pueblos Indígenas
+                      ul.c-socials.c-theme-ul
+                        //
+                          <li>
+                          <a href="#"><i class="icon-social-twitter"></i></a>
+                          </li>
+                          <li>
+                          <a href=""><i class="icon-social-facebook"></i></a>
+                          </li>
+                          <li>
+                          <a href="#"><i class="icon-social-dribbble"></i></a>
+                          </li>
+                    .c-position
+                      | Shuar Velasquez, Presidente
+                    //
+                                      <p class="cursiva">
+                                         "Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS"
+                                      </p>
+              .item
+                .c-content-person-1
+                  .c-caption.c-content-overlay
+                    .c-overlay-wrapper
+                      .c-overlay-content
+                        a(target='_blank', href='http://coneni.com.pe')
+                          i.icon-link
+                        a(href='assets/base/img/index-cliente-coneni.png', data-lightbox='fancybox', data-fancybox-group='gallery-1')
+                          i.icon-magnifier
+                    img.img-responsive.c-overlay-object(src='assets/base/img/index-cliente-coneni.png', alt='Logotipo de cliente DEVS: CONENI')
+                  .c-body
+                    .c-head
+                      .c-name.c-font-uppercase.c-font-bold
+                        | CONENI
+                      ul.c-socials.c-theme-ul
+                    .c-position
+                      | Ana Lucia Castillo, Presidenta.
+                    //
+                                      <p class="cursiva">
+                                         "Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS"
+                                      </p>
+              .item
+                .c-content-person-1
+                  .c-caption.c-content-overlay
+                    .c-overlay-wrapper
+                      .c-overlay-content
+                        a(target='_blank', href='http://gentlers.pe')
+                          i.icon-link
+                        a(href='assets/base/img/index-cliente-gentlers.png', data-lightbox='fancybox', data-fancybox-group='gallery-1')
+                          i.icon-magnifier
+                    img.img-responsive.c-overlay-object(src='assets/base/img/index-cliente-gentlers.png', alt='Logotipo de cliente DEVS: Gentlers')
+                  .c-body
+                    .c-head
+                      .c-name.c-font-uppercase.c-font-bold
+                        | Gentlers Perú
+                      ul.c-socials.c-theme-ul
+                    .c-position
+                      | Jessie Cabrera, Directora de Marketing
+                    //
+                                      <p class="cursiva">
+                                         "Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS"
+                                      </p>
+              .item
+                .c-content-person-1
+                  .c-caption.c-content-overlay
+                    .c-overlay-wrapper
+                      .c-overlay-content
+                        a(target='_blank', href='http://academiapsg.com')
+                          i.icon-link
+                        a(href='assets/base/img/index-cliente-academiapsg.png', data-lightbox='fancybox', data-fancybox-group='gallery-1')
+                          i.icon-magnifier
+                    img.img-responsive.c-overlay-object(src='assets/base/img/index-cliente-academiapsg.png', alt='Logotipo de cliente DEVS: Academia PSG')
+                  .c-body
+                    .c-head
+                      .c-name.c-font-uppercase.c-font-bold
+                        | Academia PSG
+                      ul.c-socials.c-theme-ul
+                    .c-position
+                      | Edwars, Gerente General
+                    //
+                                      <p class="cursiva">
+                                         "Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS"
+                                      </p>
+              //
+                          <div class="item">
+                            <div class="c-content-person-1">
+                              <div class="c-caption c-content-overlay">
+                                <div class="c-overlay-wrapper">
+                                  <div class="c-overlay-content">
+                                    <a target="_blank" href="http://inka-bar.com"><i class="icon-link"></i></a>
+                                    <a href="assets/base/img/index-cliente-inca-bar.png" data-lightbox="fancybox" data-fancybox-group="gallery-1">
+                                    <i class="icon-magnifier"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <img src="assets/base/img/index-cliente-inca-bar.png" class="img-responsive c-overlay-object" alt="Logotipo de cliente DEVS: Inca-bar">
+                              </div>
+                              <div class="c-body">
+                                <div class="c-head">
+                                  <div class="c-name c-font-uppercase c-font-bold">
+                                    Inca-Bar
+                                  </div>
+                                  <ul class="c-socials c-theme-ul">
+                                  </ul>
+                                </div>
+                                <div class="c-position">
+                                   Hans Arizo, Jefe de Proyecto
+                                </div><!--
+                                <p class="cursiva">
+                                   "Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS"
+                                </p>
+              //
+                </div>
+                </div>
+                </div>
+              .item
+                .c-content-person-1
+                  .c-caption.c-content-overlay
+                    .c-overlay-wrapper
+                      .c-overlay-content
+                        a(target='_blank', href='http://negocity.devs.com.pe')
+                          i.icon-link
+                        a(href='assets/base/img/index-cliente-negocity.png', data-lightbox='fancybox', data-fancybox-group='gallery-1')
+                          i.icon-magnifier
+                    img.img-responsive.c-overlay-object(src='assets/base/img/index-cliente-negocity.png', alt='Logotipo cliente Devs: Negocity')
+                  .c-body
+                    .c-head
+                      .c-name.c-font-uppercase.c-font-bold
+                        | Negocity
+                      ul.c-socials.c-theme-ul
+                    .c-position
+                      | Gustavo Dueñas, CEO
+                    //
+                                      <p class="cursiva">
+                                         "Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS Texto de muestra DEVS"
+                                      </p>
+            // End
+          // End
+      // =====FIN: CLIENTES=====
+      // =====Parallax=====
+      .c-content-box.c-size-md.c-bg-parallax(style='background-image: url(assets/base/img/index-parallax.png\
+      )')
+        .container
+          .c-content-bar-4
+            h3.c-font-uppercase.c-font-bold
+              | Lleva tu marca a internet.
+              br
+              |  Concreta esa gran Idea.
+            .c-actions
+              a.btn.btn-md.c-btn-border-2x.c-btn-square.c-btn-white.c-btn-uppercase.c-btn-bold.c-margin-b-100(href='/contacto') Contactar
+              a.btn.btn-md.c-theme-btn.c-btn-square.c-btn-uppercase.c-btn-bold.c-theme-btn.c-margin-b-100.hide(href='/contacto') Contactar 
+      // =====FIN: Parallax=====
+      // ===== POR QUE DEVS =====
+      .c-content-box.c-size-lg.c-bg-grey-1
+        .container
+          div
+            .row
+              .col-md-7
+                .c-content-feature-5
+                  .c-content-title-1
+                    h3.c-left.c-font-dark.c-font-uppercase.c-font-bold
+                      | ¿Por qué
+                      br
+                      |  Devs?
+                    .c-line-left.c-bg-blue-3.c-theme-bg
+                  .c-text
+                    | Somos un equipo conformado por profesionales apasionados del desarrollo de imagen digital.
+                  //
+                    PROXIMO LANZAMIENTO BOTON PARA QUIENES SOMOS
+                    <button type="submit" class="btn c-btn-uppercase btn-md c-btn-bold c-btn-square c-theme-btn">¡Conócenos!</button>
+                  img.c-photo.img-responsive(width='420', alt='Por qué elegir Devs Imagen Digital', src='assets/base/img/index-por-que-devs.png')
+              .col-md-5
+                .c-content-accordion-1.c-theme
+                  #accordion.panel-group(role='tablist')
+                    .panel
+                      #headingOne.panel-heading(role='tab')
+                        h4.panel-title
+                          a.c-font-bold.c-font-uppercase.c-font-19(data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                            | Apoyo Continuo
+                      #collapseOne.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingOne')
+                        .panel-body.c-font-18
+                          | En devs te acompañamos 
+                          strong  en persona
+                          |  durante todo el proceso de creación, y te apoyamos en dudas y problemas durante todo un año.
+                    .panel
+                      #headingTwo.panel-heading(role='tab')
+                        h4.panel-title
+                          a.collapsed.c-font-uppercase.c-font-bold.c-font-19(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
+                            | Alta tecnología
+                      #collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
+                        .panel-body.c-font-18
+                          | A diferencia de otras agencias, en devs nuestros ingenieros usan los mejores estándares y tecnologías para el desarrollo de tu imagen digital
+                    .panel
+                      #headingThree.panel-heading(role='tab')
+                        h4.panel-title
+                          a.collapsed.c-font-uppercase.c-font-bold.c-font-19(data-toggle='collapse', data-parent='#accordion', href='#collapseThree', aria-expanded='false', aria-controls='collapseThree')
+                            | Creatividad
+                      #collapseThree.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingThree')
+                        .panel-body.c-font-18
+                          | Amamos lo que hacemos, siempre tendrás las mejores ideas y propuestas por parte de nuestro equipo creativo.
+      // =====FIN: POR QUE DEVS=====
+      // END: PAGE CONTENT
+    // END: PAGE CONTAINER
+    // BEGIN: LAYOUT/FOOTERS/FOOTER-4
+    a(name='footer')
+    footer.c-layout-footer.c-layout-footer-2
+      .container
+        .row
+          .col-md-6
+            .c-container.c-first
+              .c-content-title-1
+                h3.c-font-uppercase.c-font-bold Tu imagen digital es la prioridad 
+                .c-line-left
+                p.color-apple
+                  | En devs contamos con asesores dispuestos a visitarte, absolver todas tus dudas y brindarte asesoría especializada. 
+                  br
+                  strong
+                    i.fa.fa-whatsapp
+                    |   986 646 836 
+                    br
+                a.btn.c-theme-btn.c-btn-uppercase.c-btn-square.c-btn-bold(href='/contacto') Contáctanos
+                p
+          .col-md-6
+            .c-container.c-last
+              .c-content-title-1
+                h3.c-font-uppercase.c-font-bold ¡Síguenos! 
+                .c-line-left
+              ul.c-socials
+                li
+                  a(target='_blank', href='https://twitter.com/devsimagen')
+                    i.icon-social-twitter
+                li
+                  a(target='_blank', href='https://www.facebook.com/devsimagendigital/')
+                    i.icon-social-facebook
+                //
+                   PROXIMO LANZAMIENTO CANAL DE YOUTUBE
+                            <li>
+                              <a target="_blank" href="youtube.com/channel/devsimagendigital"><i class="icon-social-youtube"></i></a>
+                            </li>
+                li
+                  a(target='_blank', href='https://www.linkedin.com/company/devs-imagen-digital-sac')
+                    i.fa.fa-linkedin
+              br
+              br
+              br
+              p.color-apple
+                | Revisa nuestro Blog si quieres conocer las mejores noticias en marketing digital.
+              a.btn.c-btn-border-1x.c-btn-grey-1.c-btn-square.c-btn-uppercase.c-btn-bold.c-margin-r-40(target='_blank', href='/blog') Blog
+              | -
+        .c-copyright
+          p.c-font-oswald.c-font-14
+            | Copyright © Devs Imagen Digital SAC
+    // END: LAYOUT/FOOTERS/FOOTER-4
+    // BEGIN: LAYOUT/FOOTERS/GO2TOP
+    .c-layout-go2top
+      i.icon-arrow-up
+    // END: LAYOUT/FOOTERS/GO2TOP
+    // BEGIN: LAYOUT/BASE/BOTTOM
+    // BEGIN: CORE PLUGINS
+    //if lt IE 9
+      script(src='../assets/global/plugins/excanvas.min.js')
+    script(src='assets/plugins/jquery.min.js', type='text/javascript')
+    script(src='assets/plugins/jquery-migrate.min.js', type='text/javascript')
+    script(src='assets/plugins/bootstrap/js/bootstrap.min.js', type='text/javascript')
+    // END: CORE PLUGINS
+    // BEGIN: LAYOUT PLUGINS
+    script(src='assets/plugins/revo-slider/js/jquery.themepunch.tools.min.js', type='text/javascript')
+    script(src='assets/plugins/revo-slider/js/jquery.themepunch.revolution.min.js', type='text/javascript')
+    script(src='assets/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js', type='text/javascript')
+    script(src='assets/plugins/owl-carousel/owl.carousel.min.js', type='text/javascript')
+    script(src='assets/plugins/counterup/jquery.waypoints.min.js', type='text/javascript')
+    script(src='assets/plugins/counterup/jquery.counterup.min.js', type='text/javascript')
+    script(src='assets/plugins/fancybox/jquery.fancybox.pack.js', type='text/javascript')
+    // END: LAYOUT PLUGINS
+    // BEGIN: THEME SCRIPTS
+    script(src='assets/base/js/components.js', type='text/javascript')
+    script(src='assets/base/js/app.js', type='text/javascript')
+    script.
+      $(document).ready(function() {
+      App.init(); // init core
+      // init main slider
+      var slider = $('.c-layout-revo-slider .tp-banner');
+      var cont = $('.c-layout-revo-slider .tp-banner-container');
+      var api = slider.show().revolution({
+      delay: 15000,
+      startwidth:1170,
+      startheight: 620,
+      navigationType: "hide",
+      navigationArrows: "solo",
+      touchenabled: "on",
+      onHoverStop: "on",
+      keyboardNavigation: "off",
+      navigationStyle: "circle",
+      navigationHAlign: "center",
+      navigationVAlign: "bottom",
+      spinner: "spinner2",
+      fullScreen: "on",
+      fullScreenAlignForce:"on",
+      fullScreenOffsetContainer: (App.getViewPort().width < App.getBreakpoint('md') ? '.c-layout-header' : ''),
+      shadow: 0,
+      fullWidth: "off",
+      forceFullWidth: "off",
+      hideTimerBar:"on",
+      hideThumbsOnMobile: "on",
+      hideNavDelayOnMobile: 1500,
+      hideBulletsOnMobile: "on",
+      hideArrowsOnMobile: "on",
+      hideThumbsUnderResolution: 0
+      });
+      });
+    // END: THEME SCRIPTS
+    // END: LAYOUT/BASE/BOTTOM
+

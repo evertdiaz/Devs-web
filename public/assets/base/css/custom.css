@@ -1,0 +1,21 @@
+.cursiva{
+	font-style: italic;
+}
+.centrado{
+	text-align: center;
+}
+.margen-fondo{
+	margin-bottom:20px;
+}
+.margen-arriba{
+	margin-top: 30px;
+}
+.medio{
+	vertical-align: middle;
+}
+.espaciado{
+	line-height: 25px;
+}
+.color-apple{
+	color: #ccc !important;
+}
